@@ -131,7 +131,7 @@ jobs:
             target: x86_64-apple-darwin
           - arch: arm64
             target: arm64-apple-darwin
-    runs-on: macos-13
+    runs-on: macos-10
     env:
       LDFLAGS: -dead_strip
       SUFFIX: macos-${{ matrix.arch }}
