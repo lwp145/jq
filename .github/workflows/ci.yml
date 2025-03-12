@@ -132,7 +132,7 @@ jobs:
             target: x86_64-apple-darwin
           - arch: arm64
             target: arm64-apple-darwin
-    runs-on: macos-10
+    runs-on: macos-13
     env:
       LDFLAGS: -dead_strip
       SUFFIX: macos-${{ matrix.arch }}
@@ -159,7 +159,7 @@ jobs:
             --with-oniguruma=builtin \
             --enable-static \
             --enable-all-static \
-            CFLAGS="-O2 -pthread -fstack-protector-all"
+            CFLAGS="-O2 -pthread -fstack-protector-all -mmacosx-version-min=10.15"
           make -j"$(sysctl -n hw.logicalcpu)"
           strip ./jq
           file ./jq
